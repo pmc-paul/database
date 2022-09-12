@@ -135,7 +135,7 @@ link_directories(/usr/lib)
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/sqlite_logging_database.cpp)
+add_executable(database_node src/sqlite_logging_database.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,7 +151,7 @@ add_executable(${PROJECT_NAME}_node src/sqlite_logging_database.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES} sqlite3 )
+target_link_libraries(database_node ${catkin_LIBRARIES} sqlite3 )
 
 #############
 ## Install ##
