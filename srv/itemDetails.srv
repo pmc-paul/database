@@ -1,0 +1,6 @@
+string id
+---
+string image_name
+float64 level
+float64 width
+float64 height
