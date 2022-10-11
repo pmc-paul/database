@@ -13,9 +13,9 @@ float height;
 
 static int callback(void *data, int argc, char **argv, char **azColName){
    image_name = argv[1];
-   level = (float)strtod(argv[2],NULL);
-   width = (float)strtod(argv[3],NULL);
-   height = (float)strtod(argv[4],NULL);
+   level = (float)strtod(argv[4],NULL);
+   width = (float)strtod(argv[5],NULL);
+   height = (float)strtod(argv[6],NULL);
    return 0;
 }
 
@@ -34,7 +34,7 @@ bool sqlSrv(database::itemDetails::Request  &req, database::itemDetails::Respons
 
    rc = sqlite3_open("/home/victoria/paul/dev_ws/src/database/database/PAUL.db", &db);
    
-   std::string query_string = "SELECT * FROM items WHERE name IS '" + req.id + "'";
+   std::string query_string = "SELECT * FROM items WHERE id IS '" + req.id + "'";
    sql = query_string.c_str();
 
    /* Execute SQL statement */
