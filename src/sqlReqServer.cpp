@@ -11,6 +11,7 @@ std::string image_name;
 float level;
 float width;
 float height;
+float height_offset;
 std::string id;
 
 static int callback(void *data, int argc, char **argv, char **azColName){
@@ -18,6 +19,7 @@ static int callback(void *data, int argc, char **argv, char **azColName){
    level = (float)strtod(argv[4],NULL);
    width = (float)strtod(argv[5],NULL);
    height = (float)strtod(argv[6],NULL);
+   height_offset = (float)strtod(argv[9],NULL);
    id = argv[0];
    return 0;
 }
@@ -29,6 +31,7 @@ bool sqlSrv(database::itemDetails::Request  &req, database::itemDetails::Respons
    level = 0.0;
    width = 0.0;
    height = 0.0;
+   height_offset = 0.0;
    id = "";
    sqlite3 *db;
    char *zErrMsg = 0;
@@ -53,6 +56,7 @@ bool sqlSrv(database::itemDetails::Request  &req, database::itemDetails::Respons
    res.width = width;
    res.height = height;
    res.id = id;
+   res.height_offset = height_offset;
    return true;
 }
 
@@ -63,6 +67,7 @@ bool sqlSrvName(database::itemDetailsName::Request  &req, database::itemDetailsN
    level = 0.0;
    width = 0.0;
    height = 0.0;
+   height_offset = 0.0;
    id = "";
    sqlite3 *db;
    char *zErrMsg = 0;
@@ -87,6 +92,7 @@ bool sqlSrvName(database::itemDetailsName::Request  &req, database::itemDetailsN
    res.width = width;
    res.height = height;
    res.id = id;
+   res.height_offset = height_offset;
    return true;
 }
 

@@ -5,3 +5,4 @@ float64 level
 float64 width
 float64 height
 string id
+float64 height_offset
