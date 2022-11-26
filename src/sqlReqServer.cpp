@@ -19,7 +19,7 @@ static int callback(void *data, int argc, char **argv, char **azColName){
    level = (float)strtod(argv[4],NULL);
    width = (float)strtod(argv[5],NULL);
    height = (float)strtod(argv[6],NULL);
-   height_offset = (float)strtod(argv[9],NULL);
+   height_offset = (float)strtod(argv[10],NULL);
    id = argv[0];
    return 0;
 }
